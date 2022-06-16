@@ -699,7 +699,7 @@ module.exports = grammar({
 
     return_statement: $ => seq(
       'return',
-      optional(choice($._expression, $.comma_expression)),
+      field('return_value', optional(choice($._expression, $.comma_expression))),
       ';'
     ),
 
